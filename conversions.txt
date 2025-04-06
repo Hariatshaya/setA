@@ -1,0 +1,47 @@
+public class hel{
+public static void main(String[]args){
+Scanner sc =new Scanner(System.in);
+System.out.print("Enter the number :");
+int n=sc.nextInt();
+String str="";
+char cha[]={'A','B','C','D','E','F'};
+while(n>0){
+int r=n%16;
+if(r>9)
+str=cha[(r)%10]+str;
+else
+str=(r)+""+str;
+n/=16;
+}
+System.out.println(str);
+}}
+
+ 
+decimal to octal
+public class hel{
+public static void main(String[]args){
+Scanner sc =new Scanner(System.in);
+System.out.print("Enter the number :");
+int n=sc.nextInt();
+String str="";
+while(n>0){
+str=(n%8)+""+str;
+n/=8;
+}
+System.out.println(str);
+}}
+
+
+decimal to binary
+public class hel{
+public static void main(String[]args){
+Scanner sc =new Scanner(System.in);
+System.out.print("Enter the number :");
+int n=sc.nextInt();
+String str="";
+while(n>0){
+str=(n%2)+""+str;
+n/=2;
+}
+System.out.println(str);
+}}

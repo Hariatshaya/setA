@@ -1,0 +1,93 @@
+hexadecimal addtion
+
+
+public class hel {
+    public static void main(String[] args) {
+        System.out.println(hexadd("2F35", "13BA"));
+    }
+
+    static int switchhex(char ch) {
+        switch (ch) {
+            case 'A': return 10;
+            case 'B': return 11;
+            case 'C': return 12;
+            case 'D': return 13;
+            case 'E': return 14;
+            case 'F': return 15;
+            default: return ch - '0'; // Handles 0-9
+        }
+    }
+
+    static String hexadd(String s1, String s2) {
+        int a = s1.length() - 1, b = s2.length() - 1;
+        int carry = 0;
+        StringBuilder str = new StringBuilder();
+
+        while (a >= 0 || b >= 0 || carry > 0) {
+            int d1 = (a >= 0) ? switchhex(s1.charAt(a)) : 0;
+            int d2 = (b >= 0) ? switchhex(s2.charAt(b)) : 0;
+
+            int sum = d1 + d2 + carry;
+            carry = sum / 16;
+
+            char hexDigit = (sum % 16 < 10) ? (char) ('0' + (sum % 16)) : (char) ('A' + (sum % 16 - 10));
+            str.insert(0, hexDigit);
+
+            a--;
+            b--;
+        }
+        return str.toString();
+    }
+}
+
+
+
+
+
+//octal addition
+public class hel{
+   public static void main(String[] arg){
+ Scanner ac = new Scanner (System.in);
+String a =ac.next();
+String b =ac.next();
+    String str="";
+       int i=a.length()-1;
+       int j=b.length()-1;
+       int carry =0;
+   
+       while(i>=0 || j>=0 || carry>0){
+        int bit1 =(i>=0)?a.charAt(i)-'0':0;
+        int bit2 =(j>=0)?b.charAt(j)-'0':0;
+        int sum =bit1+bit2+carry;
+        carry=sum/8;
+	str=(sum%8)+str;
+        i--;
+        j--;
+       }
+   System.out.println(str);
+}}
+
+
+
+binary addition
+public class hel{
+   public static void main(String[] arg){
+ Scanner ac = new Scanner (System.in);
+String a =ac.next();
+String b =ac.next();
+    String str="";
+       int i=a.length()-1;
+       int j=b.length()-1;
+       int carry =0;
+   
+       while(i>=0 || j>=0 || carry>0){
+        int bit1 =(i>=0)?a.charAt(i)-'0':0;
+        int bit2 =(j>=0)?b.charAt(j)-'0':0;
+        int sum =bit1+bit2+carry;
+        carry=sum/2;
+	str=(sum%2)+str;
+        i--;
+        j--;
+       }
+   System.out.println(str);
+}}
